@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Agriculture-themed design system with earth tones and natural gradients.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Natural earth-toned background system */
+    --background: 45 15% 98%;
+    --foreground: 120 15% 15%;
+
+    /* Card system with organic feel */
+    --card: 45 20% 97%;
+    --card-foreground: 120 15% 20%;
+
+    /* Popover with natural tones */
+    --popover: 45 25% 96%;
+    --popover-foreground: 120 15% 20%;
+
+    /* Deep forest green primary */
+    --primary: 120 40% 25%;
+    --primary-foreground: 45 50% 95%;
+
+    /* Warm earth secondary */
+    --secondary: 35 30% 85%;
+    --secondary-foreground: 120 25% 20%;
+
+    /* Muted earth tones */
+    --muted: 40 20% 88%;
+    --muted-foreground: 120 10% 45%;
+
+    /* Golden wheat accent */
+    --accent: 45 65% 70%;
+    --accent-foreground: 120 30% 15%;
+
+    /* Natural warning colors */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 45 50% 95%;
+
+    /* Subtle natural borders */
+    --border: 40 20% 85%;
+    --input: 40 25% 90%;
+    --ring: 120 40% 50%;
+
+    --radius: 0.75rem;
+
+    /* Agricultural gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(35 40% 80%), hsl(25 35% 70%));
+    --gradient-field: linear-gradient(180deg, hsl(120 60% 85%), hsl(110 50% 75%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 80% 90%), hsl(220 70% 85%));
+    --gradient-hero: linear-gradient(135deg, hsl(120 40% 25%) 0%, hsl(110 45% 30%) 50%, hsl(100 50% 35%) 100%);
+    
+    /* Soil type colors */
+    --soil-loamy: 35 45% 65%;
+    --soil-sandy: 40 55% 75%;
+    --soil-clayey: 25 35% 55%;
+    --soil-peaty: 20 25% 30%;
+    
+    /* Weather effects */
+    --weather-rain: hsl(220 50% 70% / 0.3);
+    --weather-sun: hsl(45 90% 80% / 0.4);
+    --weather-cloud: hsl(0 0% 60% / 0.2);
+    
+    /* Animation shadows */
+    --shadow-earth: 0 8px 32px hsl(35 40% 60% / 0.15);
+    --shadow-nature: 0 12px 40px hsl(120 40% 40% / 0.20);
+    --shadow-glow: 0 0 24px hsl(45 65% 70% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Agricultural component styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .earth-gradient {
+    background: var(--gradient-earth);
+  }
+  
+  .field-gradient {
+    background: var(--gradient-field);
+  }
+  
+  .soil-loamy {
+    background-color: hsl(var(--soil-loamy));
+  }
+  
+  .soil-sandy {
+    background-color: hsl(var(--soil-sandy));
+  }
+  
+  .soil-clayey {
+    background-color: hsl(var(--soil-clayey));
+  }
+  
+  .soil-peaty {
+    background-color: hsl(var(--soil-peaty));
+  }
+  
+  .weather-overlay-rain {
+    background: var(--weather-rain);
+  }
+  
+  .weather-overlay-sun {
+    background: var(--weather-sun);
+  }
+  
+  .weather-overlay-cloud {
+    background: var(--weather-cloud);
+  }
+  
+  .nature-shadow {
+    box-shadow: var(--shadow-nature);
+  }
+  
+  .earth-shadow {
+    box-shadow: var(--shadow-earth);
+  }
+  
+  .glow-shadow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  /* Agricultural animations */
+  @keyframes rainfall {
+    0% { opacity: 0; transform: translateY(-10px) scale(0.8); }
+    50% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(10px) scale(0.8); }
+  }
+  
+  @keyframes growth {
+    0% { transform: scale(0.8) translateY(10px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+  
+  @keyframes wind-sway {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(1deg) scale(1.02); }
+    75% { transform: rotate(-1deg) scale(0.98); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  
+  @keyframes ai-process {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(0.9); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  
+  .animate-rainfall {
+    animation: rainfall 1.5s ease-in-out infinite;
+  }
+  
+  .animate-growth {
+    animation: growth 0.8s ease-out forwards;
+  }
+  
+  .animate-wind-sway {
+    animation: wind-sway 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-ai-process {
+    animation: ai-process 2s linear infinite;
+  }
+}
